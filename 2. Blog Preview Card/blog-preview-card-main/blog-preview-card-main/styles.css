@@ -1,10 +1,3 @@
-/*  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> 
-  Add hover and adjust width and media queries */
-
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-top: 4rem;
 }
 
 main {
@@ -45,20 +39,18 @@ main {
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
-    /* Add padding and margins later */
 }
 
 .img-container img {
     width: 100%;
     height: auto;
-    object-fit: contain;
 }
 
 .tag-container {
     margin-right: auto;
     background-color: hsl(47, 88%, 63%);
     padding: 5px 10px 5px 10px;
-    border-radius: 5px;;
+    border-radius: 4px;
 }
 
 .tag-container div {
@@ -73,8 +65,15 @@ main {
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
+    white-space: nowrap;
+    max-width: 100%;
+    margin-right: auto;
+}
+
+.title:hover {
+    color:hsl(47, 88%, 63%);
 }
 
 .description {
@@ -89,4 +88,8 @@ main {
     margin-right: auto;
     gap: 0.5rem;
     font-weight: 800;
+}
+
+.attribution {
+    margin-top: auto;
 }

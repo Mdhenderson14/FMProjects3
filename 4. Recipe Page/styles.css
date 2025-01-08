@@ -1,0 +1,237 @@
+/* Base Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    color: var(--stone600)
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --stone100: hsl(30, 54%, 90%);
+    --stone150: hsl(30, 18%, 87%);
+    --stone600: hsl(30, 10%, 34%);
+    --stone900: hsl(24, 5%, 18%);
+    --brown800: hsl(14, 45%, 36%);
+    --rose800: hsl(332, 51%, 32%);
+    --rose50: hsl(330, 100%, 98%);
+    --heading: "Young Serif", serif;
+}
+
+ul, ol{
+    padding-left: 2rem;
+}
+
+li::marker { 
+    color: var(--rose800)
+}
+
+span {
+    font-weight: 700;
+}
+
+ /* Layout */
+
+body {
+    background-color: var(--stone100);
+    display: flex;
+    direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8rem 8rem;
+}
+
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 2rem;
+    width: 650px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.recipe-container li{
+    line-height: 2;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Components */
+
+article #title {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: var(--heading);
+    color: var(--stone900)
+}
+
+article p {
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+#prep-time {
+    background-color: var(--rose50);
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--rose800);
+}
+
+#prep-time .heading {
+    margin-bottom: .5rem;
+}
+
+#prep-time ul {
+    color: black;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 1rem 1rem;
+    color: var(--rose800);
+    font-family: var(--heading);
+}
+
+
+hr.divider {
+    color: 1px solid var(--stone100);
+    margin-top: 1rem;
+}
+
+table {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.content-table tr {
+    border-bottom: 1px solid var(--stone150);
+    border-spacing: 10rem;
+}
+
+.content-table tr:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.content-table th {
+    font-weight: normal;
+}
+
+.content-table td {
+    font-weight: 600;
+    color: var(--rose800)
+}
+
+.content-table th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+/*Media Queries*/
+
+/* Extra Small Devices (Phones, 320px and up) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+
+    #prep-time {
+        padding: 1rem;
+    }
+}
+
+/* Small Devices (Tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body {
+        font-size: 15px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 0.75rem;
+    }
+
+    #prep-time {
+        padding: 1.5rem;
+    }
+}
+
+/* Medium Devices (Desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    #prep-time {
+        padding: 2rem;
+    }
+}
+
+/* Large Devices (Large Desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body {
+        font-size: 17px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    .container {
+        padding: 1.25rem;
+    }
+
+    #prep-time {
+        padding: 2.5rem;
+    }
+}
+
+/* Extra Large Devices (Extra Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .container {
+        max-width: 1400px;
+    }
+
+    #prep-time {
+        padding: 3rem;
+    }
+}

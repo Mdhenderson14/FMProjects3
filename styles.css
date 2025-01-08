@@ -1,237 +1,161 @@
 /* Base Styles */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: "Outfit", sans-serif;
-    color: var(--stone600)
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: var(--primary-font);
 }
 
 :root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
     --white: hsl(0, 0%, 100%);
-    --stone100: hsl(30, 54%, 90%);
-    --stone150: hsl(30, 18%, 87%);
-    --stone600: hsl(30, 10%, 34%);
-    --stone900: hsl(24, 5%, 18%);
-    --brown800: hsl(14, 45%, 36%);
-    --rose800: hsl(332, 51%, 32%);
-    --rose50: hsl(330, 100%, 98%);
-    --heading: "Young Serif", serif;
+    --primary-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Fraunces', serif;
 }
 
-ul, ol{
-    padding-left: 2rem;
-}
-
-li::marker { 
-    color: var(--rose800)
-}
-
-span {
-    font-weight: 700;
-}
-
- /* Layout */
+/* Layout */
 
 body {
-    background-color: var(--stone100);
-    display: flex;
-    direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 8rem 8rem;
+  background-color: var(--cream);
+  display: flex;
+  direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
 }
 
-.recipe-container {
+#card-container {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    padding: 2rem;
-    width: 650px;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
     background-color: var(--white);
     border-radius: 10px;
 }
 
-.recipe-container li{
-    line-height: 2;
-}
-
-.img-container img {
+#img-container {
     width: 100%;
     height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Components */
+#price-container {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+} 
 
-article #title {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    font-family: var(--heading);
-    color: var(--stone900)
+#info-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-article p {
-    font-weight: 400;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
+/* Components */ 
 
-#prep-time {
-    background-color: var(--rose50);
-    border-radius: 8px;
-    padding: 20px;
-    color: var(--rose800);
-}
-
-#prep-time .heading {
-    margin-bottom: .5rem;
-}
-
-#prep-time ul {
-    color: black;
-}
-
-h3 {
-    font-size: 25px;
-    font-weight: 700;
-    margin: 1rem 1rem;
-    color: var(--rose800);
-    font-family: var(--heading);
-}
-
-
-hr.divider {
-    color: 1px solid var(--stone100);
-    margin-top: 1rem;
-}
-
-table {
-    margin-top: 1rem;
-    border-collapse: collapse;
+#img-container img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+    display: block;
 }
 
-.content-table tr {
-    border-bottom: 1px solid var(--stone150);
-    border-spacing: 10rem;
+.product-type {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--dark-grayish-blue);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
 }
 
-.content-table tr:nth-last-child(1) {
-    border-bottom: none;
+.product-name {
+    color: var(--very-dark-blue);
+    font-family: var(--secondary-font);
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-.content-table th {
-    font-weight: normal;
+#info-container .description {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 1rem;
 }
 
-.content-table td {
-    font-weight: 600;
-    color: var(--rose800)
+#price-container .price-sale {
+    color: var(--dark-cyan);
+    font-family: var(--secondary-font);
+    font-size: 2em;
+    font-weight: 700;
+    margin-right: 1rem;
 }
 
-.content-table th, td {
+#price-container .price-original {
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+#info-container button {
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 100%;
     padding: 1rem;
-    text-align: left;
+    border: none;
+    border-radius: 5px;
+    margin-top: auto;
+    cursor: pointer;
 }
 
-/*Media Queries*/
+button i {
+    margin-right: .5rem;
+} 
 
-/* Extra Small Devices (Phones, 320px and up) */
-@media (max-width: 575.98px) {
-    body {
-        font-size: 14px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .container {
-        padding: 0.5rem;
-    }
-
-    #prep-time {
-        padding: 1rem;
-    }
+#info-container button:hover {
+    background-color:var(--very-dark-blue)
 }
 
-/* Small Devices (Tablets, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    body {
-        font-size: 15px;
+@media (min-width: 745px) {
+    #card-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 700px;
+        height: 525px,
+        margin: 0 auto;
     }
 
-    h3 {
-        font-size: 22px;
+    #img-container, #info-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
-    .container {
-        padding: 0.75rem;
+    #img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
-    #prep-time {
-        padding: 1.5rem;
-    }
-}
-
-/* Medium Devices (Desktops, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    body {
-        font-size: 16px;
+    #info-container {
+        justify-content: center;
     }
 
-    h3 {
-        font-size: 24px;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-
-    #prep-time {
-        padding: 2rem;
-    }
-}
-
-/* Large Devices (Large Desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    body {
-        font-size: 17px;
-    }
-
-    h3 {
-        font-size: 26px;
-    }
-
-    .container {
-        padding: 1.25rem;
-    }
-
-    #prep-time {
-        padding: 2.5rem;
-    }
-}
-
-/* Extra Large Devices (Extra Large Desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    body {
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 30px;
-    }
-
-    .container {
-        max-width: 1400px;
-    }
-
-    #prep-time {
-        padding: 3rem;
+    #info-container > * {
+        flex-grow: 1;
+        flex-basis: 0;
     }
 }

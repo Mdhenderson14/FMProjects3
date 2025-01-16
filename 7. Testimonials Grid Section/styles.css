@@ -1,0 +1,220 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Global Styles */
+
+:root {
+    --clr-primary-100: hsl(0, 0%, 100%);
+    --clr-primary-200: hsl(263, 55%, 52%);
+    --clr-primary-300: hsl(217, 19%, 35%);
+    --clr-primary-400: hsl(219, 29%, 14%);
+
+    --clr-neutral-100: hsl(210, 46%, 95%);
+    --clr-neutral-200: hsl(0, 0%, 81%);
+
+    --fw-500: 500;
+    --fw-600: 600;
+
+    /* Type */
+
+    --step--2: clamp(0.5642rem, 0.4822rem + 0.41vw, 0.8rem);
+    --step--1: clamp(0.6771rem, 0.5648rem + 0.5616vw, 1rem);
+    --step-0: clamp(0.8125rem, 0.6603rem + 0.7609vw, 1.25rem);
+    --step-1: clamp(0.975rem, 0.7707rem + 1.0217vw, 1.5625rem);
+    --step-2: clamp(1.17rem, 0.8976rem + 1.362vw, 1.9531rem);
+    --step-3: clamp(1.404rem, 1.0432rem + 1.8042vw, 2.4414rem);
+    --step-4: clamp(1.6848rem, 1.2093rem + 2.3773vw, 3.0518rem);
+    --step-5: clamp(2.0218rem, 1.3981rem + 3.1182vw, 3.8147rem);
+  
+    /* Space */
+
+    --space-3xs: clamp(0.1875rem, 0.144rem + 0.2174vw, 0.3125rem);
+    --space-2xs: clamp(0.4375rem, 0.3723rem + 0.3261vw, 0.625rem);
+    --space-xs: clamp(0.625rem, 0.5163rem + 0.5435vw, 0.9375rem);
+    --space-s: clamp(0.8125rem, 0.6603rem + 0.7609vw, 1.25rem);
+    --space-m: clamp(1.25rem, 1.0326rem + 1.087vw, 1.875rem);
+    --space-l: clamp(1.625rem, 1.3207rem + 1.5217vw, 2.5rem);
+    --space-xl: clamp(2.4375rem, 1.981rem + 2.2826vw, 3.75rem);
+    --space-2xl: clamp(3.25rem, 2.6413rem + 3.0435vw, 5rem);
+    --space-3xl: clamp(4.875rem, 3.962rem + 4.5652vw, 7.5rem);
+  
+    /* One-up pairs */
+    --space-3xs-2xs: clamp(0.1875rem, 0.0353rem + 0.7609vw, 0.625rem);
+    --space-2xs-xs: clamp(0.4375rem, 0.2636rem + 0.8696vw, 0.9375rem);
+    --space-xs-s: clamp(0.625rem, 0.4076rem + 1.087vw, 1.25rem);
+    --space-s-m: clamp(0.8125rem, 0.4429rem + 1.8478vw, 1.875rem);
+    --space-m-l: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
+    --space-l-xl: clamp(1.625rem, 0.8859rem + 3.6957vw, 3.75rem);
+    --space-xl-2xl: clamp(2.4375rem, 1.5462rem + 4.4565vw, 5rem);
+    --space-2xl-3xl: clamp(3.25rem, 1.7717rem + 7.3913vw, 7.5rem);
+  
+    /* Custom pairs */
+    --space-s-l: clamp(0.8125rem, 0.2255rem + 2.9348vw, 2.5rem);
+  
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: var(--step-0);
+    background-color: var(--clr-neutral-100);
+    box-sizing: border-box;
+}
+
+h1, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: var(--step-2);
+}
+
+/* Composition */
+
+.card_container {
+    display: grid;
+    max-width: 1150px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: var(--space-m);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-primary-100);
+    border-radius: var(--radius-sm, 0.5rem);
+    padding: var(--space-m);
+    gap: var(--space-m);
+    width: 350px;
+    postition: relative;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+/* Utilities */
+
+.u_flow > * + * {
+    margin-top: var(--flow-space, 1 rem);
+}
+
+.u_text_dark {
+    color: var(--clr-primary-300);
+}
+
+/* Blocks */
+
+.quotation_svg {
+    position: absolute;
+    margin-left: auto;
+    height: calc(2 * var(--step-4));
+    width: 60px;
+    top: 0.2 ;
+}
+
+.avatar_image {
+    border-radius: 50%;
+    border: 2px solid var(--clr-neutral-200);
+    width: var(--step-4);
+    height: var(--step-4);
+}
+
+.name {
+    font-size: var(--step-1);
+}
+
+.verification {
+    opacity: 0.5;
+}
+
+.testimony_main {
+    opacity: 0.7;
+}
+
+/* Exceptions */
+
+.card:nth-child(1) {
+    background-color: var(--clr-primary-200);
+    color: var(--clr-neutral-100);
+}
+
+.card:nth-child(2), .card:nth-child(4) {
+    background-color: var(--clr-primary-300);
+    color: var(--clr-neutral-100);
+}

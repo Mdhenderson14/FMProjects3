@@ -1,0 +1,276 @@
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* Global Styles */
+
+:root {
+    --clr-primary-100: hsl(0, 78%, 62%);
+    --clr-primary-200: hsl(180, 62%, 55%);
+    --clr-primary-300: hsl(34, 97%, 64%);
+    --clr-primary-400: hsl(212, 86%, 64%);
+
+    --clr-neutral-100: white;
+    --clr-neutral-200: hsl(0, 0%, 98%);
+    --clr-neutral-300: hsl(229, 6%, 66%);
+    --clr-neutral-400: hsl(234, 12%, 34%);
+    
+    --fw-200: 200;
+    --fw-400: 400;
+    --fw-600: 600;
+
+    /* Type */
+
+    --step--2: clamp(0.651rem, 0.5992rem + 0.2591vw, 0.8rem);
+    --step--1: clamp(0.7813rem, 0.7052rem + 0.3804vw, 1rem);
+    --step-0: clamp(0.9375rem, 0.8288rem + 0.5435vw, 1.25rem);
+    --step-1: clamp(1.125rem, 0.9728rem + 0.7609vw, 1.5625rem);
+    --step-2: clamp(1.35rem, 1.1402rem + 1.0489vw, 1.9531rem);
+    --step-3: clamp(1.62rem, 1.3343rem + 1.4285vw, 2.4414rem);
+    --step-4: clamp(1.944rem, 1.5587rem + 1.9265vw, 3.0518rem);
+    --step-5: clamp(2.3328rem, 1.8174rem + 2.5772vw, 3.8147rem);
+  
+    /* Space */
+
+    --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+    --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+    --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
+    --space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
+    --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
+    --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
+    --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+  
+    /* One-up pairs */
+
+    --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vw, 0.625rem);
+    --space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
+    --space-xs-s: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
+    --space-s-m: clamp(1rem, 0.6957rem + 1.5217vw, 1.875rem);
+    --space-m-l: clamp(1.5rem, 1.1522rem + 1.7391vw, 2.5rem);
+    --space-l-xl: clamp(2rem, 1.3913rem + 3.0435vw, 3.75rem);
+    --space-xl-2xl: clamp(3rem, 2.3043rem + 3.4783vw, 5rem);
+    --space-2xl-3xl: clamp(4rem, 2.7826rem + 6.087vw, 7.5rem);
+  
+    /* Custom pairs */
+
+    --space-s-l: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: var(--step-0);
+    font-weight: var(--fw-200);
+    color: var(--clr-neutral-400);
+    background-color: var(--clr-neutral-200);
+    letter-spacing: var(--tracking);
+}
+    
+h1 {
+    font-size: var(--step-3);
+    line-height: 1.6;
+    font-weight: var(--fw-600);
+    white-space: nowrap;
+}
+    
+h2 {
+    font-size: var(--step-1);
+    line-height: var(--step-1);
+    font-weight: var(--fw-600);
+}
+
+p {
+    font-size: var(--step-0);
+    line-height: 1.8;
+    margin: var(--space-xs) 0;
+} 
+
+/* Composition */
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    padding: var(--space-m);
+    text-align: center;
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    align-items: center; 
+    margin: var(--space-m);
+}
+
+  /* Utility */
+
+.u_flow > * + * {
+    margin-top: var(--flow-space, 1 rem);
+}
+  
+.u_fw_light {
+    font-weight: var(--fw-200);
+}
+  
+.u_border_top {
+    border-top: 6px solid;
+}
+
+.u_margin_top {
+    margin-top: 0;
+}
+  
+  /* Block */
+
+.header_description {
+    margin-top: var(--space-m);
+    white-space: normal;
+}
+
+.card {
+    background-color: var(--clr-neutral-100);
+    border-radius: var(--radius-sm, 0.5rem);
+    padding: var(--space-s);
+    box-shadow: 6px 6px 10px var(--clr-neutral-300),
+    -6px 6px 10px var(--clr-neutral-300),
+    0px 6px 10px var(--clr-neutral-300) ;
+    max-width: 350px;
+}
+
+.card_title {
+    margin-bottom: var(--space-s);
+}
+  
+.card_description {
+    margin-bottom: var(--space-s);
+}
+
+.card_icon {
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.card:nth-child(1) {
+    border-color: var(--clr-primary-200);
+}
+
+.card:nth-child(2) {
+    border-color: var(--clr-primary-100);
+}
+
+.card:nth-child(3) {
+    border-color: var(--clr-primary-400);
+}
+
+.card:nth-child(4) {
+    border-color: var(--clr-primary-300);
+} 
+
+/* Exceptions */
+
+@media (min-width: 600px) {
+    .card_container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card_container > * {
+        flex: 1 1 calc(50% - var(--space-m));
+        max-width: calc(50% - var(--space-m));
+    }
+}
+
+@media (min-width: 900px) {
+    .card_container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card_container > * {
+        flex: 1 1 calc(33.33% - var(--space-m));
+        max-width: calc(33.33% - var(--space-m));
+    }
+    .card:nth-child(1), .card:nth-child(3) {
+        transform: translateY(50%);
+    }
+}
